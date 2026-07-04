@@ -1,133 +1,300 @@
+/* ===================================
+   RESET
+=================================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+html{
+    font-size:16px;
+}
+
 body{
 
-    background:#faf8f4;
-
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:'Poppins',sans-serif;
 
     color:#444;
 
     min-height:100vh;
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
+
+    padding:40px;
+
+    overflow:hidden;
+
+    background:
+
+    radial-gradient(circle at top left,
+    rgba(208,229,223,.65),
+    transparent 32%),
+
+    radial-gradient(circle at bottom left,
+    rgba(247,218,205,.60),
+    transparent 30%),
+
+    radial-gradient(circle at top right,
+    rgba(250,235,205,.50),
+    transparent 28%),
+
+    radial-gradient(circle at bottom right,
+    rgba(220,236,232,.55),
+    transparent 32%),
+
+    #FCFBF8;
 
 }
 
-main{
 
-    width:90%;
-    max-width:900px;
+/* ===================================
+   CONTENEDOR
+=================================== */
+
+.container{
+
+    width:min(900px,95%);
 
     text-align:center;
 
+    animation:fade 1s ease;
+
 }
+
+
+/* ===================================
+   LOGO
+=================================== */
 
 .logo{
 
-    width:100%;
-    max-width:650px;
+    width:min(600px,95%);
 
-    margin-bottom:70px;
+    margin-bottom:0px;
 
-}
-
-.linea{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:18px;
-
-    margin-bottom:45px;
+    filter:drop-shadow(0 10px 25px rgba(0,0,0,.05));
 
 }
 
-.linea span{
 
-    width:140px;
+/* ===================================
+   SEPARADOR
+=================================== */
 
-    height:1px;
+.separator{
 
-    background:#d8a29b;
+    width:160px;
+    height:2px;
 
-}
+    background:#E8A6A3;
 
-.punto{
-
-    width:16px;
-
-    height:16px;
-
-    border-radius:50%;
-
-    background:#d98d82;
+    margin:0 auto 50px;
 
 }
+
+
+/* ===================================
+   TITULO
+=================================== */
 
 h1{
 
-    font-size:2.2rem;
+    font-family:"Poppins",serif;
 
-    font-weight:300;
+    font-size:4rem;
 
-    margin-bottom:55px;
+    font-weight:600;
+
+    line-height:1.1;
+
+    margin-bottom:30px;
+
+    color:#424242;
 
 }
 
-.redes{
+h1 span{
+
+    color:#6E978F;
+
+}
+
+
+/* ===================================
+   TEXTO
+=================================== */
+
+p{
+
+    max-width:680px;
+
+    margin:auto;
+
+    font-size:1.15rem;
+
+    line-height:1.9;
+
+    color:#666;
+
+}
+
+strong{
+
+    color:#E8A6A3;
+
+    font-weight:500;
+
+}
+
+
+/* ===================================
+   REDES
+=================================== */
+
+.social{
+
+    margin-top:60px;
 
     display:flex;
 
     justify-content:center;
 
-    gap:35px;
+    gap:50px;
+
+    flex-wrap:wrap;
 
 }
 
-.redes a{
-
-    width:65px;
-
-    height:65px;
-
-    border:2px solid #d98d82;
-
-    border-radius:50%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
+.social a{
 
     text-decoration:none;
 
-    color:#d98d82;
+    color:#444;
 
-    font-size:2rem;
+    display:flex;
 
-    transition:.3s;
+    align-items:center;
+
+    gap:12px;
+
+    transition:.25s;
+
+    font-size:1.1rem;
 
 }
 
-.redes a:hover{
+.social a:hover{
 
-    background:#d98d82;
+    color:#E8A6A3;
 
-    color:white;
+    transform:translateY(-3px);
 
-    transform:translateY(-4px);
+}
+
+.social i{
+
+    font-size:1.5rem;
+
+}
+
+
+/* ===================================
+   FOOTER
+=================================== */
+
+.footer{
+
+    margin-top:70px;
+
+    font-size:.95rem;
+
+    color:#8c8c8c;
+
+}
+
+
+/* ===================================
+   ANIMACIÓN
+=================================== */
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media (max-width:768px){
+
+    body{
+
+        padding:30px 20px;
+
+        overflow:auto;
+
+    }
+
+    .logo{
+
+        width:100%;
+
+        margin-bottom:0px;
+        margin-tp:0px
+
+    }
+
+    .separator{
+
+        margin-bottom:35px;
+
+    }
+
+    h1{
+
+        font-size:2.7rem;
+
+    }
+
+    p{
+
+        font-size:1rem;
+
+    }
+
+    .social{
+
+        flex-direction:row;
+
+        gap:25px;
+
+    }
+
+    .footer{
+
+        margin-top:45px;
+
+    }
 
 }
