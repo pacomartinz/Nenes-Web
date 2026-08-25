@@ -1,66 +1,109 @@
-const menuButton = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".nav");
-const navLinks = document.querySelectorAll(".nav a");
+const body = document.body;
+
+const menuButton =
+  document.querySelector(".menu-button");
+
+const closeButton =
+  document.querySelector(".menu__close");
+
+const backdrop =
+  document.querySelector(".menu-backdrop");
+
+const menu =
+  document.querySelector(".menu");
+
+const menuLinks =
+  document.querySelectorAll(".menu__links a");
 
 
 function openMenu() {
-    menuButton.classList.add("active");
-    nav.classList.add("open");
+  body.classList.add("menu-open");
 
-    menuButton.setAttribute("aria-expanded", "true");
-    menuButton.setAttribute("aria-label", "Cerrar menú");
+  menuButton.setAttribute(
+    "aria-expanded",
+    "true"
+  );
 
-    document.body.style.overflow = "hidden";
+  menuButton.setAttribute(
+    "aria-label",
+    "Cerrar menú"
+  );
 }
 
 
 function closeMenu() {
-    menuButton.classList.remove("active");
-    nav.classList.remove("open");
+  body.classList.remove("menu-open");
 
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.setAttribute("aria-label", "Abrir menú");
+  menuButton.setAttribute(
+    "aria-expanded",
+    "false"
+  );
 
-    document.body.style.overflow = "";
+  menuButton.setAttribute(
+    "aria-label",
+    "Abrir menú"
+  );
 }
 
 
-function toggleMenu() {
+/* Abrir/cerrar desde hamburguesa */
 
-    const isOpen = nav.classList.contains("open");
+menuButton.addEventListener(
+  "click",
+  () => {
+
+    const isOpen =
+      body.classList.contains(
+        "menu-open"
+      );
 
     if (isOpen) {
-        closeMenu();
+      closeMenu();
     } else {
-        openMenu();
+      openMenu();
     }
 
-}
+  }
+);
 
 
-menuButton.addEventListener("click", toggleMenu);
+/* Botón X */
+
+closeButton.addEventListener(
+  "click",
+  closeMenu
+);
 
 
-/* Cerrar al pulsar un enlace */
+/* Pulsar fuera del menú */
 
-navLinks.forEach(link => {
+backdrop.addEventListener(
+  "click",
+  closeMenu
+);
 
-    link.addEventListener("click", () => {
-        closeMenu();
-    });
+
+/* Cerrar cuando se pulsa un enlace */
+
+menuLinks.forEach((link) => {
+
+  link.addEventListener(
+    "click",
+    closeMenu
+  );
 
 });
 
 
-/* Cerrar con Escape */
+/* Cerrar con ESC */
 
-document.addEventListener("keydown", event => {
+document.addEventListener(
+  "keydown",
+  (event) => {
 
-    if (
-        event.key === "Escape" &&
-        nav.classList.contains("open")
-    ) {
-        closeMenu();
+    if (event.key === "Escape") {
+      closeMenu();
     }
 
-});
+  }
+);

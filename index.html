@@ -1,119 +1,260 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-    <title>Centro Nenes | Fisioterapia Pediátrica</title>
+  <meta
+    name="description"
+    content="Centro de desarrollo infantil. Acompañamos a cada peque y a su familia."
+  >
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>ne.nes — Centro de desarrollo infantil</title>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap"
-        rel="stylesheet"
-    >
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
 
-    <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 
 <body>
 
-    <header class="header">
+  <main class="page" id="inicio">
 
-        <a href="#" class="logo-link" aria-label="Centro Nenes">
+    <!-- ========================================
+         HERO
+    ========================================= -->
+    <section class="hero">
+
+      <!-- Foto principal -->
+      <img
+        class="hero__image"
+        src="img/hero.jpg"
+        alt="Profesional acompañando a una niña durante una actividad"
+      >
+
+      <!-- Capa cálida -->
+      <div class="hero__overlay"></div>
+
+
+      <!-- HEADER -->
+      <header class="header">
+
+        <div class="brand">
+
+          <!-- LOGO REAL -->
+          <a
+            href="#inicio"
+            class="brand__logo-link"
+            aria-label="ne.nes - Inicio"
+          >
             <img
-                src="img/logo.png"
-                alt="Nenes - Centro de Fisioterapia Pediátrica"
-                class="logo"
+              class="brand__logo"
+              src="img/logo.png"
+              alt="ne.nes"
             >
-        </a>
+          </a>
+
+          <p class="brand__subtitle">
+            Centro de desarrollo infantil
+          </p>
+
+        </div>
 
 
+        <!-- Botón hamburguesa -->
         <button
-            class="menu-toggle"
-            type="button"
-            aria-label="Abrir menú"
-            aria-expanded="false"
-            aria-controls="main-nav"
+          class="menu-button"
+          type="button"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="main-menu"
         >
-            <span></span>
-            <span></span>
-            <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
 
+      </header>
 
-        <nav class="nav" id="main-nav">
-
-            <a href="#inicio">Inicio</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#centro">El centro</a>
-            <a href="#contacto">Contacto</a>
-
-        </nav>
-
-    </header>
+    </section>
 
 
+    <!-- ========================================
+         BLOQUE INFERIOR
+    ========================================= -->
+    <section class="intro">
 
-    <main>
-
-        <section class="hero" id="inicio">
-
-            <p class="hero-kicker">
-                Centro de desarrollo infantil
-            </p>
-
-            <div class="hero-photo">
-                <img
-                    src="img/hero.jpg"
-                    alt="Fisioterapia pediátrica en Centro Nenes"
-                >
-            </div>
-
-        </section>
+      <!-- Círculo amarillo -->
+      <div
+        class="intro__circle"
+        aria-hidden="true"
+      ></div>
 
 
-        <section class="intro" id="centro">
+      <!-- Tarjeta crema -->
+      <div class="intro__card">
 
-            <div class="intro-card">
+        <h1 class="intro__title">
+          Acompañamos<br>
+          a cada peque y<br>
+          a su familia.
+        </h1>
 
-                <span class="intro-dot" aria-hidden="true"></span>
+        <p class="intro__text">
+          Con cercanía, especialización<br>
+          y respeto por su desarrollo.
+        </p>
 
-                <h1 class="intro-title">
-                    Acompañamos<br>
-                    a cada peque y<br>
-                    a su familia<span class="dot">.</span>
-                </h1>
+        <a
+          href="#contacto"
+          class="appointment-link"
+        >
+          <span>Pide cita</span>
 
-                <p class="intro-text">
-                    Con cercanía, especialización
-                    y respeto por su desarrollo.
-                </p>
+          <span
+            class="appointment-link__arrow"
+            aria-hidden="true"
+          >
+            →
+          </span>
+        </a>
 
-            </div>
+      </div>
 
-        </section>
-        
-    </main>
+    </section>
 
 
+    <!-- ========================================
+         EJEMPLO DE SECCIÓN DE CONTACTO
+         Puedes sustituirla por tu contenido.
+    ========================================= -->
+    <section
+      class="contact"
+      id="contacto"
+    >
 
-    <script src="script.js"></script>
+      <div class="contact__inner">
+
+        <p class="contact__eyebrow">
+          Estamos aquí para acompañarte
+        </p>
+
+        <h2 class="contact__title">
+          Hablemos
+        </h2>
+
+        <p class="contact__text">
+          Cuéntanos qué necesitas y te ayudaremos
+          a encontrar el acompañamiento adecuado.
+        </p>
+
+        <a
+          href="mailto:hola@nenes.es"
+          class="contact__button"
+        >
+          Contactar
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ========================================
+       FONDO DEL MENÚ
+  ========================================= -->
+  <div
+    class="menu-backdrop"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- ========================================
+       MENÚ LATERAL
+  ========================================= -->
+  <nav
+    class="menu"
+    id="main-menu"
+    aria-label="Navegación principal"
+  >
+
+    <button
+      class="menu__close"
+      type="button"
+      aria-label="Cerrar menú"
+    >
+      ×
+    </button>
+
+
+    <div class="menu__content">
+
+      <a
+        href="#inicio"
+        class="menu__brand"
+        aria-label="ne.nes - Inicio"
+      >
+        <img
+          class="menu__logo"
+          src="assets/logo.png"
+          alt="ne.nes"
+        >
+      </a>
+
+
+      <ul class="menu__links">
+
+        <li>
+          <a href="#inicio">
+            Inicio
+          </a>
+        </li>
+
+        <li>
+          <a href="#servicios">
+            Servicios
+          </a>
+        </li>
+
+        <li>
+          <a href="#equipo">
+            Equipo
+          </a>
+        </li>
+
+        <li>
+          <a href="#familias">
+            Familias
+          </a>
+        </li>
+
+        <li>
+          <a href="#contacto">
+            Contacto
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </nav>
+
+
+  <script src="script.js"></script>
 
 </body>
-
 </html>
