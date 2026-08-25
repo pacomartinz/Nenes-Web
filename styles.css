@@ -101,7 +101,7 @@ a {
 }
 
 .logo {
-    width: clamp(170px, 50vw, 220px);
+    width: clamp(45px, 12vw, 55px);
     height: auto;
 }
 
