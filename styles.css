@@ -1,0 +1,792 @@
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+    --background: #fbf7f0;
+
+    --text: #292b2c;
+    --text-soft: #474747;
+
+    --gold: #e2b94f;
+    --gold-light: #edcf7c;
+
+    --coral: #df867b;
+
+    --serif: "Cormorant Garamond", serif;
+    --sans: "Poppins", sans-serif;
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: var(--sans);
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 85% 12%,
+            rgba(239, 211, 160, 0.12),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(238, 220, 204, 0.14),
+            transparent 38%
+        ),
+        var(--background);
+
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================
+   HEADER
+   MOBILE FIRST
+========================================= */
+
+.header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    z-index: 100;
+
+    padding:
+        max(28px, env(safe-area-inset-top))
+        24px
+        10px;
+
+    background: transparent;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo-link {
+    display: block;
+    position: relative;
+    z-index: 102;
+}
+
+.logo {
+    width: clamp(170px, 50vw, 220px);
+    height: auto;
+}
+
+
+/* =========================================
+   HAMBURGUESA
+========================================= */
+
+.menu-toggle {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+
+    border: 0;
+    padding: 0;
+
+    background: transparent;
+    cursor: pointer;
+
+    position: relative;
+    z-index: 102;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 2px;
+
+    display: block;
+
+    background: var(--text);
+    border-radius: 20px;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+/* Estado abierto */
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* =========================================
+   NAVEGACIÓN MOBILE
+========================================= */
+
+.nav {
+    position: fixed;
+    inset: 0;
+
+    padding: 160px 32px 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 32px;
+
+    background: rgba(251, 247, 240, 0.98);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-15px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease;
+
+    z-index: 101;
+}
+
+.nav.open {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.nav a {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.nav a:hover {
+    color: var(--coral);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    width: 100%;
+
+    position: relative;
+
+    padding-top: 73px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.hero-content {
+    width: min(100%, 520px);
+
+    padding: 0 25px;
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.hero h1 {
+    max-width: 390px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(3.55rem, 15vw, 5rem);
+    font-weight: 500;
+
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+
+    color: #27292a;
+}
+
+.hero h1 .dot {
+    color: var(--coral);
+
+    display: inline-block;
+
+    margin-left: 3px;
+
+    font-family: var(--sans);
+    font-size: 0.85em;
+
+    transform: translateY(-0.02em);
+}
+
+
+/* =========================================
+   TEXTO
+========================================= */
+
+.hero-text {
+    max-width: 390px;
+
+    margin-top: 40px;
+
+    font-family: var(--sans);
+    font-size: 1.02rem;
+    font-weight: 400;
+
+    line-height: 1.7;
+
+    color: var(--text-soft);
+}
+
+
+/* =========================================
+   BOTÓN CTA
+========================================= */
+
+.cta {
+    width: fit-content;
+    min-width: 220px;
+
+    margin-top: 36px;
+
+    padding: 16px 25px 16px 31px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 42px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            115deg,
+            var(--gold-light),
+            var(--gold)
+        );
+
+    color: var(--text);
+
+    font-size: 1.08rem;
+    font-weight: 400;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 12px 30px rgba(199, 155, 49, 0.12);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.cta svg {
+    width: 24px;
+    height: 24px;
+
+    fill: none;
+
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    transition: transform 0.25s ease;
+}
+
+.cta:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 16px 35px rgba(199, 155, 49, 0.2);
+}
+
+.cta:hover svg {
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   ZONA VISUAL
+========================================= */
+
+.hero-visual {
+    width: 100%;
+
+    min-height: 610px;
+
+    margin-top: 38px;
+
+    position: relative;
+}
+
+
+/* =========================================
+   FORMA DORADA
+========================================= */
+
+.gold-shape {
+    width: 390px;
+    height: 390px;
+
+    position: absolute;
+
+    right: -205px;
+    top: -18px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edcc73,
+            #e4b94c
+        );
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   FOTO
+========================================= */
+
+.hero-image-wrapper {
+    width: calc(100% - 62px);
+
+    max-width: 450px;
+
+    height: 620px;
+
+    position: absolute;
+
+    top: 58px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    overflow: hidden;
+
+    /*
+       Esta forma crea el arco superior
+       del mockup.
+    */
+    border-radius:
+        220px
+        220px
+        0
+        0;
+
+    z-index: 3;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    /*
+       Ajusta este valor dependiendo
+       de tu fotografía.
+    */
+    object-position: center center;
+}
+
+
+/* =========================================
+   CÍRCULO CORAL
+========================================= */
+
+.coral-dot {
+    width: 54px;
+    height: 54px;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    top: 390px;
+    left: 17px;
+
+    background: var(--coral);
+
+    z-index: 5;
+}
+
+
+/* =========================================
+   ANIMACIONES INICIALES
+========================================= */
+
+.hero-content {
+    animation: heroContent 0.8s ease both;
+}
+
+.hero-image-wrapper {
+    animation: heroImage 1s 0.12s ease both;
+}
+
+.gold-shape {
+    animation: heroShape 1s 0.2s ease both;
+}
+
+
+@keyframes heroContent {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes heroImage {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+
+}
+
+
+@keyframes heroShape {
+
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================
+   MÓVILES PEQUEÑOS
+========================================= */
+
+@media (max-width: 370px) {
+
+    .header {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .hero-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero {
+        padding-top: 55px;
+    }
+
+    .hero h1 {
+        font-size: 3.35rem;
+    }
+
+    .hero-text {
+        margin-top: 32px;
+        font-size: 0.95rem;
+    }
+
+    .cta {
+        margin-top: 30px;
+
+        min-width: 205px;
+
+        padding:
+            14px
+            22px
+            14px
+            27px;
+    }
+
+    .hero-image-wrapper {
+        width: calc(100% - 44px);
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (min-width: 700px) {
+
+    .header {
+        max-width: 1200px;
+
+        margin: auto;
+
+        padding-left: 45px;
+        padding-right: 45px;
+    }
+
+    .hero {
+        max-width: 1200px;
+
+        margin: auto;
+
+        padding-top: 90px;
+    }
+
+    .hero-content {
+        padding-left: 50px;
+    }
+
+    .hero h1 {
+        font-size: 5.4rem;
+
+        max-width: 600px;
+    }
+
+    .hero-text {
+        max-width: 470px;
+
+        font-size: 1.12rem;
+    }
+
+    .hero-visual {
+        min-height: 720px;
+    }
+
+    .hero-image-wrapper {
+        max-width: 560px;
+        height: 720px;
+
+        border-radius:
+            300px
+            300px
+            0
+            0;
+    }
+
+    .gold-shape {
+        width: 500px;
+        height: 500px;
+
+        right: -150px;
+    }
+
+}
+
+
+/* =========================================
+   ESCRITORIO
+========================================= */
+
+@media (min-width: 1000px) {
+
+    body {
+        min-height: 100vh;
+    }
+
+    .header {
+        padding-top: 36px;
+    }
+
+    .logo {
+        width: 235px;
+    }
+
+
+    /* escondemos hamburguesa */
+
+    .menu-toggle {
+        display: none;
+    }
+
+
+    /* navegación escritorio */
+
+    .nav {
+        position: static;
+
+        padding: 0;
+
+        flex-direction: row;
+
+        gap: 32px;
+
+        background: transparent;
+
+        opacity: 1;
+        visibility: visible;
+
+        transform: none;
+    }
+
+    .nav a {
+        font-family: var(--sans);
+        font-size: 0.95rem;
+        font-weight: 400;
+    }
+
+
+    /* Hero en dos columnas */
+
+    .hero {
+        min-height: calc(100vh - 110px);
+
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+
+        align-items: center;
+
+        padding-top: 20px;
+    }
+
+    .hero-content {
+        width: 100%;
+
+        padding-left: 55px;
+        padding-bottom: 90px;
+    }
+
+    .hero h1 {
+        font-size: clamp(5rem, 6vw, 6.8rem);
+    }
+
+    .hero-text {
+        margin-top: 35px;
+    }
+
+    .hero-visual {
+        height: 760px;
+
+        margin-top: 0;
+    }
+
+    .hero-image-wrapper {
+        width: 74%;
+        max-width: 600px;
+
+        height: 700px;
+
+        top: 70px;
+
+        border-radius:
+            310px
+            310px
+            0
+            0;
+    }
+
+    .gold-shape {
+        width: 550px;
+        height: 550px;
+
+        top: 10px;
+        right: -125px;
+    }
+
+    .coral-dot {
+        width: 62px;
+        height: 62px;
+
+        left: 7%;
+        top: 500px;
+    }
+
+}
+
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}

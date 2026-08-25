@@ -2,67 +2,141 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Centro Nenes</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Centro Nenes | Fisioterapia Pediátrica</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
 
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 
 <body>
 
-    
+    <header class="header">
 
-    <main class="container">
+        <a href="#" class="logo-link" aria-label="Centro Nenes">
+            <img
+                src="img/logo.png"
+                alt="Nenes - Centro de Fisioterapia Pediátrica"
+                class="logo"
+            >
+        </a>
 
-        <img src="img/logo.png" alt="Centro Nenes" class="logo">
 
-        <div class="separator"></div>
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="main-nav"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-        <h1>Próxima apertura</h1>
 
-        <p>
-            Avda. de la Constitución, 13, Osuna
-           
-        </p>
+        <nav class="nav" id="main-nav">
 
-        <div class="social">
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#centro">El centro</a>
+            <a href="#contacto">Contacto</a>
 
-            <a href="https://instagram.com/nenes_fisioterapia/" target="_blank">
-                <i class="fa-brands fa-instagram"></i>
-                
-            </a>
+        </nav>
 
-            <a href="https://wa.me/34623803148" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-        
-    </a>
+    </header>
 
-            <a href="mailto:centro.nenes@gmail.com">
-                <i class="fa-regular fa-envelope"></i>
-                
-            </a>
 
-        </div>
 
-        <p class="footer">
-             Web en construcción 
-        </p>
+    <main>
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-content">
+
+                <h1>
+                    A su lado,<br>
+                    en cada etapa<span class="dot">.</span>
+                </h1>
+
+
+                <p class="hero-text">
+                    Acompañamos a cada peque y a su familia
+                    con cercanía, especialización y respeto
+                    por su desarrollo.
+                </p>
+
+
+                <a
+                    href="https://wa.me/34623803148"
+                    class="cta"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span>Pide cita</span>
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path d="M5 12h14"></path>
+                        <path d="m14 6 6 6-6 6"></path>
+                    </svg>
+                </a>
+
+            </div>
+
+
+
+            <div class="hero-visual">
+
+                <!-- círculo dorado de fondo -->
+                <div class="gold-shape"></div>
+
+                <!-- círculo coral -->
+                <div class="coral-dot"></div>
+
+
+                <div class="hero-image-wrapper">
+
+                    <img
+                        src="img/hero.jpg"
+                        alt="Fisioterapia pediátrica en Centro Nenes"
+                        class="hero-image"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
+
+
+
+    <script src="script.js"></script>
 
 </body>
 
