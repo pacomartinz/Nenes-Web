@@ -156,41 +156,7 @@
     </section>
 
 
-    <!-- ========================================
-         EJEMPLO DE SECCIÓN DE CONTACTO
-         Puedes sustituirla por tu contenido.
-    ========================================= -->
-    <section
-      class="contact"
-      id="contacto"
-    >
-
-      <div class="contact__inner">
-
-        <p class="contact__eyebrow">
-          Estamos aquí para acompañarte
-        </p>
-
-        <h2 class="contact__title">
-          Hablemos
-        </h2>
-
-        <p class="contact__text">
-          Cuéntanos qué necesitas y te ayudaremos
-          a encontrar el acompañamiento adecuado.
-        </p>
-
-        <a
-          href="mailto:hola@nenes.es"
-          class="contact__button"
-        >
-          Contactar
-        </a>
-
-      </div>
-
-    </section>
-
+    
   </main>
 
 
@@ -206,73 +172,74 @@
   <!-- ========================================
        MENÚ LATERAL
   ========================================= -->
-  <nav
-    class="menu"
-    id="main-menu"
-    aria-label="Navegación principal"
+ <nav
+  class="menu"
+  id="main-menu"
+  aria-label="Navegación principal"
+>
+
+  <button
+    class="menu__close"
+    type="button"
+    aria-label="Cerrar menú"
   >
+    ×
+  </button>
 
-    <button
-      class="menu__close"
-      type="button"
-      aria-label="Cerrar menú"
-    >
-      ×
-    </button>
+  <div class="menu__content">
 
+    <ul class="menu__links">
 
-    <div class="menu__content">
+      <li>
+        <a href="#inicio">
+          Inicio
+        </a>
+      </li>
 
-      <a
-        href="#inicio"
-        class="menu__brand"
-        aria-label="ne.nes - Inicio"
-      >
-        <img
-          class="menu__logo"
-          src="assets/logo.png"
-          alt="ne.nes"
+      <li>
+        <a href="#que-es-nenes">
+          ¿Qué es nenes?
+        </a>
+      </li>
+
+      <li>
+        <a href="#servicios">
+          Servicios
+        </a>
+      </li>
+
+      <li>
+        <a href="#espacio">
+          Nuestro espacio
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="#familias"
+          class="menu__link--active"
         >
-      </a>
+          Para familias
+        </a>
+      </li>
 
+      <li>
+        <a href="#sobre-mi">
+          Sobre mí
+        </a>
+      </li>
 
-      <ul class="menu__links">
+      <li>
+        <a href="#informacion">
+          Información práctica
+        </a>
+      </li>
 
-        <li>
-          <a href="#inicio">
-            Inicio
-          </a>
-        </li>
+    </ul>
 
-        <li>
-          <a href="#servicios">
-            Servicios
-          </a>
-        </li>
+  </div>
 
-        <li>
-          <a href="#equipo">
-            Equipo
-          </a>
-        </li>
-
-        <li>
-          <a href="#familias">
-            Familias
-          </a>
-        </li>
-
-        <li>
-          <a href="#contacto">
-            Contacto
-          </a>
-        </li>
-
-      </ul>
-
-    </div>
-
-  </nav>
+</nav>
 
 
   <script src="script.js"></script>

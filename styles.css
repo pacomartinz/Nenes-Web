@@ -590,33 +590,7 @@ body.menu-open .menu-button span:nth-child(3) {
 ========================================== */
 
 .menu-backdrop {
-  position: fixed;
-  z-index: 90;
-
-  inset: 0;
-
-  background: rgba(31, 26, 23, 0.27);
-
-  opacity: 0;
-
-  visibility: hidden;
-
-  pointer-events: none;
-
-  backdrop-filter: blur(4px);
-
-  transition:
-    opacity 0.3s ease,
-    visibility 0.3s ease;
-}
-
-
-body.menu-open .menu-backdrop {
-  opacity: 1;
-
-  visibility: visible;
-
-  pointer-events: auto;
+  display: none;
 }
 
 
@@ -628,22 +602,26 @@ body.menu-open .menu-backdrop {
   position: fixed;
   z-index: 100;
 
-  top: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
 
-  width: min(82%, 540px);
+  width: 100%;
+  height: 100dvh;
 
   padding:
-    clamp(35px, 6vw, 55px);
+    24px
+    22px;
 
-  background: #f4e9de;
+  overflow: hidden;
 
-  box-shadow:
-    -25px 0 60px
-    rgba(46, 37, 30, 0.09);
+  background:
+    radial-gradient(
+      circle at 45% 35%,
+      #f1cc5d 0%,
+      #e7bc45 45%,
+      #dba932 100%
+    );
 
-  transform: translateX(105%);
+  transform: translateX(100%);
 
   transition:
     transform
@@ -657,15 +635,55 @@ body.menu-open .menu {
 }
 
 
+/* Formas decorativas verdes */
+
+.menu::before,
+.menu::after {
+  content: "";
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+.menu::before {
+  width: 150px;
+  height: 150px;
+
+  right: -75px;
+  bottom: -25px;
+
+  background: #b7bea0;
+}
+
+
+.menu::after {
+  width: 85px;
+  height: 85px;
+
+  right: 35px;
+  bottom: -38px;
+
+  background: #aeb895;
+}
+
+
 /* ==========================================
    BOTÓN CERRAR
 ========================================== */
 
 .menu__close {
   position: absolute;
+  z-index: 3;
 
-  top: 23px;
-  right: 30px;
+  top: 24px;
+  right: 24px;
+
+  width: 28px;
+  height: 28px;
 
   padding: 0;
 
@@ -673,15 +691,43 @@ body.menu-open .menu {
 
   background: transparent;
 
-  color: var(--text);
+  color: transparent;
 
-  font-size: 48px;
-
-  font-weight: 300;
-
-  line-height: 1;
+  font-size: 0;
 
   cursor: pointer;
+}
+
+
+.menu__close::before,
+.menu__close::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 22px;
+  height: 1px;
+
+  background: #ffffff;
+
+  transform-origin: center;
+}
+
+
+.menu__close::before {
+  transform:
+    translate(-50%, -50%)
+    rotate(45deg);
+}
+
+
+.menu__close::after {
+  transform:
+    translate(-50%, -50%)
+    rotate(-45deg);
 }
 
 
@@ -690,30 +736,15 @@ body.menu-open .menu {
 ========================================== */
 
 .menu__content {
+  position: relative;
+  z-index: 2;
+
   display: flex;
   flex-direction: column;
 
-  min-height: 100%;
+  height: 100%;
 
-  padding-top: 75px;
-}
-
-
-/* Logo dentro del menú */
-
-.menu__brand {
-  display: inline-block;
-
-  align-self: flex-start;
-
-  line-height: 0;
-}
-
-
-.menu__logo {
-  width: clamp(160px, 25vw, 230px);
-
-  height: auto;
+  padding-top: 62px;
 }
 
 
@@ -725,12 +756,9 @@ body.menu-open .menu {
   display: flex;
   flex-direction: column;
 
-  gap: 26px;
+  gap: 27px;
 
-  margin:
-    clamp(60px, 9vw, 90px)
-    0
-    0;
+  margin: 0;
 
   padding: 0;
 
@@ -739,44 +767,40 @@ body.menu-open .menu {
 
 
 .menu__links a {
-  position: relative;
-
   display: inline-block;
 
-  font-family: var(--font-serif);
+  color: #ffffff;
 
-  font-size: clamp(38px, 6vw, 58px);
+  font-family: var(--font-body);
 
-  line-height: 1;
+  font-size: 17px;
 
-  transition: color 0.2s ease;
-}
+  font-weight: 400;
 
+  line-height: 1.25;
 
-.menu__links a::after {
-  content: "";
+  letter-spacing: -0.02em;
 
-  position: absolute;
-
-  left: 0;
-  bottom: -7px;
-
-  width: 0;
-  height: 1px;
-
-  background: var(--orange);
-
-  transition: width 0.25s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 
 .menu__links a:hover {
-  color: var(--orange);
+  opacity: 0.7;
+
+  transform: translateX(4px);
 }
 
 
-.menu__links a:hover::after {
-  width: 100%;
+.menu__links a.menu__link--active {
+  font-weight: 500;
+}
+
+
+.menu__links a::after {
+  display: none;
 }
 
 
@@ -966,30 +990,6 @@ body.menu-open .menu {
   
 
 
-  /* Menú */
-
-  .menu {
-    width: 88%;
-
-    padding: 35px;
-  }
-
-
-  .menu__logo {
-    width: 160px;
-  }
-
-
-  .menu__links {
-    margin-top: 65px;
-
-    gap: 24px;
-  }
-
-
-  .menu__links a {
-    font-size: 42px;
-  }
 
 }
 
