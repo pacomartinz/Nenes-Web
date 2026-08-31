@@ -651,6 +651,8 @@ body.menu-open .menu-button span:nth-child(3) {
     -34px;
 
   object-fit: contain;
+
+  transform: translateY(-18px);
 }
 
 
