@@ -278,7 +278,7 @@ body.menu-open .menu-button span:nth-child(3) {
   */
   margin-top: clamp(-170px, -17vw, -90px);
 
-  min-height: clamp(700px, 88vw, 820px);
+  min-height: 0;
 
   background: transparent;
 
@@ -496,7 +496,7 @@ body.menu-open .menu-button span:nth-child(3) {
   position: relative;
 
   padding:
-    clamp(90px, 12vw, 140px)
+    clamp(55px, 7vw, 80px)
     clamp(28px, 7vw, 70px)
     clamp(80px, 11vw, 120px);
 
@@ -670,7 +670,7 @@ body.menu-open .menu-button span:nth-child(3) {
 
   color: #ffffff;
 
-  background: #c9826b;
+  background: var(--yellow);
 
   text-align: center;
 }
@@ -1177,7 +1177,7 @@ body.menu-open .menu {
   .intro {
   margin-top: -75px;
 
-  min-height: 620px;
+  min-height: 0;
 }
 
 
@@ -1248,7 +1248,7 @@ body.menu-open .menu {
 
   .about {
   padding:
-    80px
+    50px
     28px
     75px;
 }
