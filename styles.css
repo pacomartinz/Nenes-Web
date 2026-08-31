@@ -388,47 +388,6 @@ body.menu-open .menu-button span:nth-child(3) {
 }
 
 
-/* ==========================================
-   SUBTÍTULO SOBRE EL TITULAR
-========================================== */
-
-.intro__eyebrow {
-  display: flex;
-  align-items: center;
-
-  margin:
-    0
-    0
-    clamp(28px, 3.5vw, 36px);
-
-  color: #46423f;
-
-  font-family: var(--font-body);
-  font-size: clamp(13px, 1.7vw, 17px);
-  font-weight: 500;
-
-  line-height: 1.2;
-
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.intro__eyebrow::before {
-  content: "";
-
-  flex: 0 0 auto;
-
-  width: 12px;
-  height: 12px;
-
-  margin-right: 14px;
-
-  border-radius: 50%;
-
-  background: var(--orange);
-}
-
-
 
 
 /* ==========================================
@@ -526,6 +485,300 @@ body.menu-open .menu-button span:nth-child(3) {
 .appointment-link:hover .appointment-link__arrow {
   transform:
     translate(8px, -2px);
+}
+
+
+/* ==========================================
+   QUÉ ES NENES
+========================================== */
+
+.about {
+  position: relative;
+
+  padding:
+    clamp(90px, 12vw, 140px)
+    clamp(28px, 7vw, 70px)
+    clamp(80px, 11vw, 120px);
+
+  overflow: hidden;
+
+  background: var(--paper);
+}
+
+
+/* Formas suaves de fondo */
+
+.about::before,
+.about::after {
+  content: "";
+
+  position: absolute;
+
+  pointer-events: none;
+
+  background: rgba(224, 203, 176, 0.20);
+
+  border-radius: 50%;
+}
+
+
+.about::before {
+  width: 220px;
+  height: 360px;
+
+  left: -130px;
+  bottom: 30px;
+
+  transform: rotate(12deg);
+}
+
+
+.about::after {
+  width: 190px;
+  height: 300px;
+
+  right: -125px;
+  bottom: 80px;
+
+  transform: rotate(-15deg);
+}
+
+
+/* Contenedor */
+
+.about__inner {
+  position: relative;
+  z-index: 2;
+
+  width: min(100%, 720px);
+
+  margin: 0 auto;
+}
+
+
+/* Título */
+
+.about__header {
+  text-align: center;
+}
+
+
+.about__title {
+  margin: 0;
+
+  color: #46423f;
+
+  font-family: "Lora", serif;
+
+  font-size: clamp(34px, 5vw, 50px);
+  font-weight: 500;
+
+  line-height: 1.1;
+}
+
+
+.about__dot {
+  display: block;
+
+  width: 9px;
+  height: 9px;
+
+  margin:
+    clamp(20px, 3vw, 28px)
+    auto
+    0;
+
+  border-radius: 50%;
+
+  background: var(--orange);
+}
+
+
+/* Texto */
+
+.about__text {
+  max-width: 470px;
+
+  margin:
+    clamp(34px, 5vw, 48px)
+    auto
+    0;
+
+  text-align: center;
+
+  color: #404040;
+
+  font-size: clamp(16px, 2.2vw, 20px);
+
+  line-height: 1.65;
+}
+
+
+.about__text p {
+  margin: 0;
+}
+
+
+.about__text p + p {
+  margin-top: 28px;
+}
+
+
+/* Pajarito + tarjeta */
+
+.about__feature {
+  position: relative;
+
+  width: min(100%, 520px);
+
+  margin:
+    clamp(35px, 6vw, 55px)
+    auto
+    0;
+}
+
+
+.about__bird {
+  position: relative;
+  z-index: 2;
+
+  width: clamp(115px, 20vw, 165px);
+  height: auto;
+
+  margin:
+    0
+    auto
+    -34px;
+
+  object-fit: contain;
+}
+
+
+/* Tarjeta coral */
+
+.about__card {
+  position: relative;
+  z-index: 1;
+
+  padding:
+    clamp(62px, 8vw, 80px)
+    clamp(32px, 7vw, 58px)
+    clamp(38px, 6vw, 55px);
+
+  border-radius:
+    clamp(30px, 5vw, 48px);
+
+  color: #ffffff;
+
+  background: #c9826b;
+
+  text-align: center;
+}
+
+
+.about__card-icon {
+  margin-bottom: 18px;
+
+  font-family: Georgia, serif;
+
+  font-size: 28px;
+
+  line-height: 1;
+}
+
+
+.about__card-title {
+  margin: 0;
+
+  font-family: var(--font-body);
+
+  font-size: clamp(18px, 2.5vw, 22px);
+  font-weight: 400;
+}
+
+
+.about__card-text {
+  max-width: 350px;
+
+  margin:
+    clamp(26px, 4vw, 34px)
+    auto
+    0;
+
+  font-size: clamp(15px, 2.1vw, 18px);
+
+  line-height: 1.7;
+}
+
+
+/* Pequeño adorno inferior */
+
+.about__ornament {
+  position: relative;
+
+  width: 24px;
+  height: 10px;
+
+  margin:
+    22px
+    auto
+    0;
+}
+
+
+.about__ornament::before,
+.about__ornament::after {
+  content: "";
+
+  position: absolute;
+
+  top: 3px;
+
+  width: 10px;
+  height: 6px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+
+.about__ornament::before {
+  left: 1px;
+
+  transform: rotate(-25deg);
+}
+
+
+.about__ornament::after {
+  right: 1px;
+
+  transform: rotate(25deg);
+}
+
+
+/* Puntos inferiores */
+
+.about__pagination {
+  display: flex;
+  justify-content: center;
+
+  gap: 13px;
+
+  margin-top: 38px;
+}
+
+
+.about__pagination-dot {
+  width: 13px;
+  height: 13px;
+
+  border-radius: 50%;
+
+  background: #ded2c4;
+}
+
+
+.about__pagination-dot--active {
+  background: var(--yellow);
 }
 
 
@@ -963,19 +1216,6 @@ body.menu-open .menu {
 }
 
 
-.intro__eyebrow {
-  margin-bottom: 24px;
-
-  font-size: 12px;
-  letter-spacing: 0.13em;
-}
-
-.intro__eyebrow::before {
-  width: 9px;
-  height: 9px;
-
-  margin-right: 10px;
-}
   
 
   .intro__title {
@@ -1004,6 +1244,82 @@ body.menu-open .menu {
 
     font-size: 22px;
   }
+
+
+  .about {
+  padding:
+    80px
+    28px
+    75px;
+}
+
+
+.about__title {
+  font-size: 32px;
+}
+
+
+.about__text {
+  max-width: 315px;
+
+  font-size: 15px;
+
+  line-height: 1.65;
+}
+
+
+.about__text p + p {
+  margin-top: 25px;
+}
+
+
+.about__feature {
+  max-width: 360px;
+
+  margin-top: 30px;
+}
+
+
+.about__bird {
+  width: 125px;
+
+  margin-bottom: -30px;
+}
+
+
+.about__card {
+  padding:
+    60px
+    30px
+    36px;
+
+  border-radius: 32px;
+}
+
+
+.about__card-title {
+  font-size: 18px;
+}
+
+
+.about__card-text {
+  max-width: 270px;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+.about__pagination {
+  margin-top: 28px;
+}
+
+
+.about__pagination-dot {
+  width: 11px;
+  height: 11px;
+}
 
 
   /* Círculo */
