@@ -408,7 +408,7 @@ body.menu-open .menu-button span:nth-child(3) {
 
   font-weight: 200;
 
-  line-height: 1.03;
+  line-height: 1.20;
 
   letter-spacing: -0.002em;
 }
@@ -466,7 +466,7 @@ body.menu-open .menu-button span:nth-child(3) {
 .appointment-link__arrow {
   display: inline-block;
 
-  font-size: 1.55em;
+  font-size: 1.1em;
   font-weight: 300;
 
   line-height: 0;
@@ -1278,7 +1278,7 @@ body.menu-open .menu {
 
 
   .intro__text {
-    margin-top: 30px;
+    margin-top: 15px;
 
     font-size: 19px;
 
@@ -1287,11 +1287,15 @@ body.menu-open .menu {
 
 
   .appointment-link {
-    width: 185px;
+    width: fit-content;
 
     margin-top: 35px;
 
     font-size: 22px;
+    
+    justify-content: flex-start;
+
+    gap: 12px;
   }
 
 
