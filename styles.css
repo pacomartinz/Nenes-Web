@@ -477,10 +477,6 @@ body.menu-open .menu-button span:nth-child(3) {
 }
 
 
-.appointment-link:hover {
-  width: clamp(210px, 26vw, 255px);
-}
-
 
 .appointment-link:hover .appointment-link__arrow {
   transform:
