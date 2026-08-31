@@ -404,9 +404,9 @@ body.menu-open .menu-button span:nth-child(3) {
   font-family: "Lora", serif;
 
 
-  font-size: clamp(50px, 6.9vw, 69px);
+  font-size: clamp(45px, 6.9vw, 69px);
 
-  font-weight: 500;
+  font-weight: 200;
 
   line-height: 1.03;
 
@@ -716,15 +716,6 @@ body.menu-open .menu-button span:nth-child(3) {
 }
 
 
-.about__card-icon {
-  margin-bottom: 18px;
-
-  font-family: Georgia, serif;
-
-  font-size: 28px;
-
-  line-height: 1;
-}
 
 
 .about__card-title {
@@ -1279,9 +1270,9 @@ body.menu-open .menu {
   .intro__title {
     font-size:
       clamp(
-        32px,
-        8.7vw,
-        42px
+        28px,
+        7.2vw,
+        36px
       );
   }
 
@@ -1403,11 +1394,6 @@ body.menu-open .menu {
   .intro__card {
     padding-left: 23px;
     padding-right: 23px;
-  }
-
-
-  .intro__title {
-    font-size: 38px;
   }
 
 
